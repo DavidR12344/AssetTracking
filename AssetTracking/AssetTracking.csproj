@@ -11,9 +11,4 @@
     <None Remove="models\Computer.cs~RF162dc4c.TMP" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="interfaces\" />
-    <Folder Include="controllers\" />
-  </ItemGroup>
-
 </Project>
