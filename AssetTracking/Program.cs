@@ -84,7 +84,7 @@ namespace AssetTracking
 
                             string localPriceToday = price.ToString();
                             orderList.Add(name, type, brand, model, date, price, currency, localPriceToday);
-                            break; // Exit the loop if all inputs are valid and the electronic is added
+                            break;
                         }
                         break;
                     case "2":

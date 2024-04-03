@@ -8,11 +8,18 @@ namespace AssetTracking.models
 {
     public abstract class Office
     {
-        public Office(string name)
+
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="officeName"></param>
+
+        public Office(string officeName)
         {
-            Name = name;
+            OfficeName = officeName;
         }
 
-        public string Name { get; set; }
+        //Property with get and set method
+        public string OfficeName { get; set; }
     }
 }

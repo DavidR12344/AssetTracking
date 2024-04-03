@@ -4,7 +4,19 @@ namespace AssetTracking.models
 {
     public abstract class Electronic : Office
     {
-        public Electronic(string name, string type, string brand, string model, string purchasedDate, int price, string currency, string localPriceToday) : base(name)
+
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="officeName"></param>
+        /// <param name="type"></param>
+        /// <param name="brand"></param>
+        /// <param name="model"></param>
+        /// <param name="purchasedDate"></param>
+        /// <param name="price"></param>
+        /// <param name="currency"></param>
+        /// <param name="localPriceToday"></param>
+        public Electronic(string officeName, string type, string brand, string model, string purchasedDate, int price, string currency, string localPriceToday) : base(officeName)
         {
             Type = type;
             Brand = brand;
@@ -16,6 +28,7 @@ namespace AssetTracking.models
             EndOfLife = CalculateEndOfLife(purchasedDate);
         }
 
+        //Properties
         public string Type { get; set; }
         public string Brand { get; set; }
         public string Model { get; set; }
@@ -25,6 +38,11 @@ namespace AssetTracking.models
         public string LocalPriceToday { get; set; }
         public DateTime EndOfLife { get; set; }
 
+        /// <summary>
+        /// A method that calculates end of life for an Electronic
+        /// </summary>
+        /// <param name="purchasedDate"></param>
+        /// <returns></returns>
         private DateTime CalculateEndOfLife(string purchasedDate)
         {
             if (DateTime.TryParseExact(purchasedDate, new[] { "MM/dd/yyyy", "MM-dd-yyyy" }, System.Globalization.CultureInfo.InvariantCulture, System.Globalization.DateTimeStyles.None, out DateTime purchaseDate))
